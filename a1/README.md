@@ -4,17 +4,17 @@ Project will manage multiple threads written to a shared file.
 
 ## Team Members
 
-Jasmine Nelson
+Jasmine Nelson (cssc2157)
 
-Ernesto Sanchez
+Ernesto Sanchez (cssc2123)
 
 ### Class Information
 
-CS570,Summer 2020
+CS570, Summer 2020
 
 ### Assignment Information
 
-Assignment #1, Write to File
+Assignment #1, Write to File Using Threads
 
 ### Filename
 
@@ -24,13 +24,15 @@ README
 
 bots.c
 
+bots.h
+
 README
 
 QOUTE.txt
 
 ### Compile Instructions
 
-how to compile
+How to compile:
 
 ```
 gcc bots.c
@@ -38,74 +40,25 @@ gcc bots.c
 
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+### Operating Instructions
 
 ```
-Give the example
+There is no necessary Operating Instructions
 ```
 
-And repeat
 
-```
-until finished
-```
+## List of Decisions
 
-End with an example of getting some data out of the system or using it for a little demo
+There is none at the moment
 
-## Running the tests
+### List of tools not required in Assignment
 
-Explain how to run the automated tests for this system
+We used all the tools at our disposal required by the Assigment
 
-### Break down into end to end tests
+### List of deficiencies or bugs
 
-Explain what these tests test and why
+There is none
 
-```
-Give an example
-```
+## Lesson Learned
 
-### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
