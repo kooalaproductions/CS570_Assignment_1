@@ -14,54 +14,43 @@ bots.c file
 
 
 sem_t FLAG;//semaphore for threads to use
-FILE *fp;
+FILE *fp;//file pointer
 
 void* thread_odd(void* arg){
 sem_wait(&FLAG);
 fp=fopen("QUOTE.txt","a");//append to file
-fprintf(fp, "Threads ID: %d The Qoute\r \n", pthread_self());//write thread id
+fprintf(fp, "Thread ID: %d %cComputer science is no more about computers than astronomy is about telescopes.%c --Edsger Dijkstra\r \n", pthread_self(), '"', '"');//write thread id
 
 fclose(fp);//closing file
 
 
-printf("Thread %d is running\n", pthread_self());
+printf("Thread %d is running\n", pthread_self());//write to console which thread is running
 
 sleep(3);//critical section
 
 printf("Exiting\n");
-sem_post(&FLAG);
+sem_post(&FLAG);//release semaphore FLAG
 }
 
 void* thread_even(void* arg){
 sem_wait(&FLAG);
 fp=fopen("QUOTE.txt","a");//append to file
-fprintf(fp, "Threads ID: %d The Qoute\r \n", pthread_self());//write thread id
+fprintf(fp, "Thread ID: %d %cControlling complexity is the essence of computer programming.%c --Brian Kernigan\r \n", pthread_self(), '"', '"');//write thread id
 
 fclose(fp);//closing file
 
 
-printf("Thread %d is running\n", pthread_self());
+printf("Thread %d is running\n", pthread_self());//write to console which thread is running
 
 sleep(2);//critical section
 
 printf("Exiting\n");
-sem_post(&FLAG);
+sem_post(&FLAG);//release semaphore FLAG
 }
-
-/*
-int main(){
-FILE *fp;
-fp=fopen("QUOTE.txt","w");//opening file
-fprintf(fp, "PID: %d\r \n", getpid());//write PID to file
-fclose(fp);//closing file
-return 0;
-}
-*/
-
 
 int main(){
 
-fp=fopen("QUOTE.txt","w");//opening file
+fp=fopen("QUOTE.txt","w");//creating file
 fprintf(fp, "PID: %d\r \n", getpid());//write PID to file
 fclose(fp);//closing file
 
