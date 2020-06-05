@@ -1,1 +1,8 @@
-PID: 18712 
+PID: 6784 
+Threads ID: 1 The Qoute 
+Threads ID: 2 The Qoute 
+Threads ID: 3 The Qoute 
+Threads ID: 4 The Qoute 
+Threads ID: 5 The Qoute 
+Threads ID: 6 The Qoute 
+Threads ID: 7 The Qoute 
