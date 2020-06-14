@@ -1,19 +1,24 @@
-EXEC = bots
 CC = gcc
-CFLAGS = -g -c
-LFALGS = -g
-FILES = bots.c
+CFLAGS = -Wall -g
+LFLAGS = -g
 LIBS = -lpthread
 
-OBJECTS = $(FILES:.c=.o)
+SRCS = bots.c
 
-$(EXEC):$(OBJECTS)
- $(CC) $(CFLAGS) -o $(EXEC) $(OBJECTS) $(LFLAGS) $(LIBS)
- rm -f *.o
+OBJS = $(SRCS:.c=.o)
+
+MAIN = bots
+
+.PHONY: depend clean
+
+all:	$(MAIN)
+		@echo Simple compliter named bots has been compiled
+
+$(MAIN): $(OBJS)
+		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 .c.o:
- $(CC) $(CFLAGS) $<
-
+			$(CC) $(CFLAGS) -c $<	-o $@
 
 clean:
- rm -f *.o $(EXEC)
+		$(RM) *.o *~ $(MAIN)
