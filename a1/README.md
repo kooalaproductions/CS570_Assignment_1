@@ -30,11 +30,15 @@ README
 
 QOUTE.txt
 
+Makefile
+
 ### Compile Instructions
 
 How to compile:
 
 ```
+make
+
 gcc bots.c
 
 
