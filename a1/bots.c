@@ -15,57 +15,67 @@ bots.c file
 
 #define NUM_THREADS 7
 
-sem_t FLAG;
-FILE *fp;
-
+sem_t FLAG;//semaphore for threads to use
+FILE *fp;//file pointer
+/**
+ThreadDoesThis() function will utilize the semaphore to block/wait for all
+the threads to complete their work. All threads created from the main() function
+will be assigned a quote depending on their parity and print to QOUTE.txt periodically.
+**/
 void *ThreadDoesThis(void *ptr){
 
-  for(int j = 0; j < 8; j++){
-    if(pthread_self() % 2 == 0){
+  for(int j = 0; j < 8; j++){//iterate through threads
+    if(pthread_self() % 2 == 0){//if thread id is even sleep(2)
       sleep(2);
-    } else {
+    } else {//if thread is is odd sleep(3)
       sleep(3);
     }
 
-    sem_wait(&FLAG);
+    sem_wait(&FLAG);//wait semaphore
 
-    printf("Thread %d is running\n", pthread_self());
-    fp=fopen("QUOTE.txt","a");
+    printf("Thread %d is running\n", pthread_self());//print out to console the running threads
+    fp=fopen("QUOTE.txt","a");//append to file
 
-    if(pthread_self() % 2 == 0){
+    if(pthread_self() % 2 == 0){//if thread id is even
       fprintf(fp,"Thread %lu: %s\r \n", pthread_self(), "Controlling complexity is the essence of computer programming. --Brian Kernigan");
-    } else{
+    } else{//if thread is is odd
       fprintf(fp,"Thread %lu: %s\r \n", pthread_self(), "Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra");
     }
 
-    fclose(fp);
+    fclose(fp);//close file
 
-    sem_post(&FLAG);
+    sem_post(&FLAG);//release semaphore
 
   }
   pthread_exit(NULL);
+  printf("Task completed! Please check QOUTE.txt.");
 }
 
+/**
+main() function will create threads and write to QUOTE.txt file.
+By using the function ThreadDoesThis the function will distinguish
+between the parity of thread ids.
+**/
 int main(void) {
 
   pid_t pid = getpid();
-  fp=fopen("QUOTE.txt","w+");
-  fprintf(fp, "PID: %d\r \n", pid);
-  fclose(fp);
+  fp=fopen("QUOTE.txt","w+");//opening file
+  fprintf(fp, "PID: %d\r \n", pid);//writing pid to file
+  fclose(fp);//closing file
 
-  sem_init(&FLAG, 0 ,1);
+  sem_init(&FLAG, 0 ,1);//initialize shared semaphore
 
   pthread_t threads[NUM_THREADS];
-  for(int i = 1; i <= NUM_THREADS; i++){
+  for(int i = 1; i <= NUM_THREADS; i++){//creating necessary threads
     pthread_create(&threads[i], NULL, ThreadDoesThis, NULL);
   }
 
   for(int i=1; i<= NUM_THREADS;i++){
-    pthread_join(threads[i],NULL);
+    pthread_join(threads[i],NULL);//wait for threads to terminate and clean up resources
   }
 
   pthread_exit(NULL);
-  sem_destroy(&FLAG);
+  sem_destroy(&FLAG);//destroy semaphore
   return 0;
 }
 
