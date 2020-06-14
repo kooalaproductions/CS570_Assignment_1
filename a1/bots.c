@@ -24,8 +24,9 @@ will be assigned a quote depending on their parity and print to QOUTE.txt period
 **/
 void *ThreadDoesThis(void *ptr){
 
+  long threadId = pthread_self();
   for(int j = 0; j < 8; j++){//iterate through threads
-    if(pthread_self() % 2 == 0){//if thread id is even sleep(2)
+    if(threadId % 2 == 0){//if thread id is even sleep(2)
       sleep(2);
     } else {//if thread is is odd sleep(3)
       sleep(3);
@@ -36,7 +37,7 @@ void *ThreadDoesThis(void *ptr){
     printf("Thread %d is running\n", pthread_self());//print out to console the running threads
     fp=fopen("QUOTE.txt","a");//append to file
 
-    if(pthread_self() % 2 == 0){//if thread id is even
+    if(threadId % 2 == 0){//if thread id is even
       fprintf(fp,"Thread %lu: %s\r \n", pthread_self(), "Controlling complexity is the essence of computer programming. --Brian Kernigan");
     } else{//if thread is is odd
       fprintf(fp,"Thread %lu: %s\r \n", pthread_self(), "Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra");
