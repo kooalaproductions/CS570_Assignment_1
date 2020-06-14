@@ -39,7 +39,7 @@ How to compile:
 ```
 make
 
-gcc bots.c
+./bots
 
 
 ```
@@ -69,6 +69,8 @@ This will result in:
 ```
 Simple compiler name bots has been compiled
 ```
+
+
 
 ## List of Decisions
 
