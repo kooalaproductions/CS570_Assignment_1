@@ -44,16 +44,37 @@ gcc bots.c
 
 ```
 
+This will make the executable bots
+
+To clean up and remove object files:
+
+```
+make clean
+
+``
+
+
 ### Operating Instructions
 
+If error: linker command not found for architecture x86_64
+
 ```
-There is no necessary Operating Instructions
+gcc -c bots.c
+
+make
 ```
 
+This will result in:
+
+```
+Simple compiler name bots has been compiled
+```
 
 ## List of Decisions
 
-There is none at the moment
+We decided to begin with the easy part of the assignment which was just to write the pid to the QOUTE.txt file.
+Then we began our research on POSIX in order to utilize pthread and semaphores.
+
 
 ### List of tools not required in Assignment
 
