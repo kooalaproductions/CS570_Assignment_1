@@ -1,22 +1,29 @@
-CC = gcc
-CFLAGS = -lpthread
+#CC = gcc
+#CFLAGS = -lpthread
+#
+#SRCS = bots.c
+#
+#OBJS = $(SRCS:.c=.o)
+#
+#MAIN = bots
+#
+#.PHONY: depend clean
+#
+#all:	$(MAIN)
+#		@echo Simple compiler named bots has been compiled
+#
+#$(MAIN): $(OBJS)
+#		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
+#
+#.c.o:
+#			$(CC) $(CFLAGS) -c $<	-o $@
+#
+#clean:
+#		$(RM) *.o *~ $(MAIN)
 
-SRCS = bots.c
 
-OBJS = $(SRCS:.c=.o)
-
-MAIN = bots
-
-.PHONY: depend clean
-
-all:	$(MAIN)
-		@echo Simple compiler named bots has been compiled
-
-$(MAIN): $(OBJS)
-		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
-
-.c.o:
-			$(CC) $(CFLAGS) -c $<	-o $@
+all:
+		gcc bots.c -o bots -lpthread
 
 clean:
-		$(RM) *.o *~ $(MAIN)
+		rm bots
