@@ -44,8 +44,6 @@ make
 
 ```
 
-This will make the executable bots
-
 To clean up and remove object files:
 
 ```
