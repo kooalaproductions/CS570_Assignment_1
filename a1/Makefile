@@ -20,14 +20,3 @@ $(MAIN): $(OBJS)
 
 clean:
 		$(RM) *.o *~ $(MAIN)
-
-#CFLAGS = -lpthread
-#
-#bots:	bots.o
-#		gcc $(CFLAGS) -o bots bots.o
-#
-#bots.o:	bots.c
-#		gcc -c bots.c
-#
-#clean:
-#		rm -f *.o bots

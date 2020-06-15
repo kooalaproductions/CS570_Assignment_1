@@ -49,7 +49,7 @@ void *ThreadDoesThis(void *ptr){
     sem_post(&FLAG);//release semaphore
 
   }
-  pthread_exit(NULL);
+  pthread_exit(NULL);//terminates thread
 
 }
 
@@ -77,7 +77,6 @@ int main(void) {
   }
 
   printf("Task completed! Please check QOUTE.txt.");
-  pthread_exit(NULL);
   sem_destroy(&FLAG);//destroy semaphore
   return 0;
 }
