@@ -69,7 +69,7 @@ int main(void) {
 
   pthread_t threads[NUM_THREADS];
   for(int i = 1; i <= NUM_THREADS; i++){//creating necessary threads
-    pthread_create(&threads[i], NULL, ThreadDoesThis, (void*)i);
+    pthread_create(&threads[i], NULL, ThreadDoesThis, (void*)(size_t)i);
   }
 
   for(int i=1; i<= NUM_THREADS;i++){
