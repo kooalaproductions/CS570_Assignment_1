@@ -1,57 +1,57 @@
-PID: 3576 
-Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+PID: 6636 
 Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
-Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 2: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 6: Controlling complexity is the essence of computer programming. --Brian Kernigan 
+Thread 4: Controlling complexity is the essence of computer programming. --Brian Kernigan 
 Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
-Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
 Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 7: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 5: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 3: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
+Thread 1: Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra 
