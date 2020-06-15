@@ -24,7 +24,7 @@
 CFLAGS = -lpthread
 
 bots:	bots.o
-		gcc bots.c $(CFLAGS) -o bots bots.o
+		gcc $(CFLAGS) -o bots bots.o
 
 bots.o:	bots.c
 		gcc -c bots.c
