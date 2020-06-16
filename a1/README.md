@@ -48,8 +48,7 @@ How to compile:
 ```
 make all
 
-./bots.exe
-
+./bots
 
 ```
 
@@ -60,7 +59,7 @@ make clean
 
 ```
 
-This will remove QUOTE.txt, bots.o, and bots.exe
+This will remove QUOTE.txt, bots.o, and bots
 
 
 ## List of Decisions
