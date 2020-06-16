@@ -26,4 +26,4 @@ all:
 		gcc bots.c -o bots -lpthread
 
 clean:
-		rm bots
+		rm bots bots.o QUOTE.txt
