@@ -34,10 +34,19 @@ Makefile
 
 ### Compile Instructions
 
+```
+make all
+```
+
+This will create a executable file named bots.
+
+
+### Operating Instructions
+
 How to compile:
 
 ```
-make
+make all
 
 ./bots
 
@@ -50,24 +59,6 @@ To clean up and remove object files:
 make clean
 
 ``
-
-
-### Operating Instructions
-
-If error: linker command not found for architecture x86_64
-
-```
-gcc -c bots.c
-
-make
-```
-
-This will result in:
-
-```
-Simple compiler name bots has been compiled
-```
-
 
 
 ## List of Decisions
