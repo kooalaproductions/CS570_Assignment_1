@@ -58,7 +58,7 @@ To clean up and remove object files:
 ```
 make clean
 
-``
+```
 
 
 ## List of Decisions
