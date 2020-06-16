@@ -4,7 +4,7 @@ Project will manage multiple threads written to a shared file.
 
 ## Team Members
 
-Jasmine Nelson RedID: 820233707(cssc2157)
+Jasmine Nelson RedID: 820233707 (cssc2157)
 
 Ernesto Sanchez RedID: 819323499 (cssc2123)
 
