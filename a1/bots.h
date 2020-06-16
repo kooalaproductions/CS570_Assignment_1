@@ -1,6 +1,6 @@
 /*
-Jasmine Nelson (cssc2157)
-Ernesto Sanchez (cssc2123)
+Jasmine Nelson RedID: 820233707 (cssc2157)
+Ernesto Sanchez RedID: 819323499 (cssc2123)
 
 CS570, Summer 2020
 Professor Leonard
