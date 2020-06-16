@@ -20,7 +20,7 @@ FILE *fp;//file pointer
 /**
 ThreadDoesThis() function will utilize the semaphore to block/wait for all
 the threads to complete their work. All threads created from the main() function
-will be assigned a quote depending on their parity and print to QOUTE.txt periodically.
+will be assigned a quote depending on their parity and print to QUOTE.txt periodically.
 **/
 void *ThreadDoesThis(void *ptr){
 
@@ -76,7 +76,7 @@ int main(void) {
     pthread_join(threads[i],NULL);//wait for threads to terminate and clean up resources
   }
 
-  printf("Task completed! Please check QOUTE.txt.");
+  printf("Task completed! Please check QUOTE.txt.");
   sem_destroy(&FLAG);//destroy semaphore
   return 0;
 }
