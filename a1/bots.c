@@ -39,9 +39,9 @@ void *ThreadDoesThis(void *ptr){
     fp=fopen("QUOTE.txt","a");//append to file
 
     if(tid % 2 == 0){//if thread id is even
-       fprintf(fp,"Thread %d: %s\r \n", tid, "Controlling complexity is the essence of computer programming. --Brian Kernigan");
+       fprintf(fp,"Thread %d: %cControlling complexity is the essence of computer programming.%c --Brian Kernigan\r \n", tid, '"', '"');
     } else{//if thread is is odd
-        fprintf(fp,"Thread %d: %s\r \n", tid, "Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra");
+        fprintf(fp,"Thread %d: %cComputer science is no more about computers than astronomy is about telescopes.%c --Edsger Dijkstra\r \n", tid, '"', '"');
     }
 
     fclose(fp);//close file
