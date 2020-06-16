@@ -24,4 +24,4 @@ $(MAIN): $(OBJS)
 		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
 
 clean:
-		$(RM) *.o *~ $(MAIN) QUOTE.txt
+		$(RM) *.o *~ $(MAIN) QUOTE.txt bots.exe
