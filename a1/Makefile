@@ -15,7 +15,7 @@ SRCS = bots.c
 
 OBJS = $(SRCS:.c=.o)
 
-MAIN = bots
+MAIN = bots.exe
 
 .PHONY: depend clean
 
