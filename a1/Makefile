@@ -29,7 +29,7 @@ $(MAIN): $(OBJS)
 			$(CC) $(CFLAGS) -c $<	-o $@
 
 clean:
-		$(RM) *.o *~ $(MAIN) QUOTE.txt bots.exe
+		$(RM) *.o *~ $(MAIN) QUOTE.txt
 
 
 #all:

@@ -60,6 +60,8 @@ make clean
 
 ```
 
+This will remove QUOTE.txt, bots.o, and bots.exe
+
 
 ## List of Decisions
 
