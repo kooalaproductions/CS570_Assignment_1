@@ -38,7 +38,7 @@ Makefile
 make all
 ```
 
-This will create a executable file named bots.
+This will create a executable file named bots.exe
 
 
 ### Operating Instructions
@@ -48,7 +48,7 @@ How to compile:
 ```
 make all
 
-./bots
+./bots.exe
 
 
 ```
