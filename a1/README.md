@@ -2,6 +2,8 @@
 
 Project will manage multiple threads written to a shared file.
 
+Account cssc2123 is available for testing.
+
 ## Team Members
 
 Jasmine Nelson RedID: 820233707 (cssc2157)
