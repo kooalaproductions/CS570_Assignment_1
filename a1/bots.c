@@ -24,10 +24,10 @@ will be assigned a quote depending on their parity and print to QOUTE.txt period
 **/
 void *ThreadDoesThis(void *ptr){
 
-  int tid = 0;
-  tid = (int)ptr;
+//  int tid = 0;
+//  tid = (int)ptr;
   for(int j = 0; j < 8; j++){//iterate through threads
-    if(tid % 2 == 0){//if thread id is even sleep(2)
+    if((int unsigned long)pthread_self() % 2 == 0){//if thread id is even sleep(2)
       sleep(2);
     } else {//if thread is is odd sleep(3)
       sleep(3);
@@ -35,13 +35,13 @@ void *ThreadDoesThis(void *ptr){
 
     sem_wait(&FLAG);//wait semaphore
 
-    printf("Thread %d is running\n", tid);//print out to console the running threads
+    printf("Thread %d is running\n", (int unsigned long)pthread_self());//print out to console the running threads
     fp=fopen("QUOTE.txt","a");//append to file
 
-    if(tid % 2 == 0){//if thread id is even
-       fprintf(fp,"Thread %d: %cControlling complexity is the essence of computer programming.%c --Brian Kernigan\r \n", tid, '"', '"');
+    if((int unsigned long)pthread_self() % 2 == 0){//if thread id is even
+       fprintf(fp,"Thread %d: %cControlling complexity is the essence of computer programming.%c --Brian Kernigan\r \n", (int unsigned long)pthread_self(), '"', '"');
     } else{//if thread is is odd
-        fprintf(fp,"Thread %d: %cComputer science is no more about computers than astronomy is about telescopes.%c --Edsger Dijkstra\r \n", tid, '"', '"');
+        fprintf(fp,"Thread %d: %cComputer science is no more about computers than astronomy is about telescopes.%c --Edsger Dijkstra\r \n", (int unsigned long)pthread_self(), '"', '"');
     }
 
     fclose(fp);//close file
@@ -69,7 +69,7 @@ int main(void) {
 
   pthread_t threads[NUM_THREADS];
   for(int i = 1; i <= NUM_THREADS; i++){//creating necessary threads
-    pthread_create(&threads[i], NULL, ThreadDoesThis, (void*)(size_t)i);
+    pthread_create(&threads[i], NULL, ThreadDoesThis, NULL);
   }
 
   for(int i=1; i<= NUM_THREADS;i++){
