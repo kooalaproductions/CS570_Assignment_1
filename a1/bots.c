@@ -26,7 +26,8 @@ void *ThreadDoesThis(void *ptr){
 
   int tid = 0;
   tid = (int)ptr;
-  for(int j = 0; j < 8; j++){//iterate through threads
+  int j;
+  for(j = 0; j < 8; j++){//iterate through threads
     if(tid % 2 == 0){//if thread id is even sleep(2)
       sleep(2);
     } else {//if thread is is odd sleep(3)
@@ -68,15 +69,16 @@ int main(void) {
   sem_init(&FLAG, 0 ,1);//initialize shared semaphore
 
   pthread_t threads[NUM_THREADS];
-  for(int i = 1; i <= NUM_THREADS; i++){//creating necessary threads
+  int i;
+  for(i = 1; i <= NUM_THREADS; i++){//creating necessary threads
     pthread_create(&threads[i], NULL, ThreadDoesThis, (void*)(size_t)i);
   }
-
-  for(int i=1; i<= NUM_THREADS;i++){
-    pthread_join(threads[i],NULL);//wait for threads to terminate and clean up resources
+  int k;
+  for(k=1; k<= NUM_THREADS;k++){
+    pthread_join(threads[k],NULL);//wait for threads to terminate and clean up resources
   }
 
-  printf("Task completed! Please check QUOTE.txt.");
+  printf("Task completed! Please check QUOTE.txt.\n");
   sem_destroy(&FLAG);//destroy semaphore
   return 0;
 }

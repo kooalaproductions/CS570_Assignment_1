@@ -4,28 +4,26 @@
 #CS570, Summer 2020
 #Professor Leonard
 #
-#Assignment #1, Write to File Using Threads
+#Assignment #2, Microshell
 
 #Makefile
 
 CC = gcc
 CFLAGS = -lpthread
 
-SRCS = bots.c
+SRCS = msh.c
 
 OBJS = $(SRCS:.c=.o)
 
-MAIN = bots
+MAIN = msh
 
 
 all:	$(MAIN)
-		@echo Simple compiler named bots has been compiled
+		@echo Simple compiler named msh has been compiled
 
 $(MAIN): $(OBJS)
 		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
 
 
 clean:
-		$(RM) *.o *~ $(MAIN) QUOTE.txt
-
-
+		$(RM) *.o *~ $(MAIN)
