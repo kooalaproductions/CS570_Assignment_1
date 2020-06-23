@@ -15,7 +15,7 @@ SRCS = msh.c
 
 OBJS = $(SRCS:.c=.o)
 
-MAIN = msh
+MAIN = pam
 
 
 all:	$(MAIN)
