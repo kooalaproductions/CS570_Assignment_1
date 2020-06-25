@@ -13,16 +13,31 @@ msh.c file
 #include "msh.h"
 
 static char line[1024];
+char *getlogin();
+int run = 1;
 
-    int main(){
+    char micro_loop(){
+    char *buf;
+        buf = (char *)malloc(10*sizeof(char));
+        buf = getlogin();
 
-        while(1){
-            printf("cssc9999%% ");
+
+        while(run){
+
+           printf("%s%%", buf);
             fflush(NULL);
 
-            if(!fgets(line, 1024, stdin)){
+           if(!fgets(line, 1024, stdin)){//variable line has what the user entered
                 return 0;
-            }
+           }
+
+            printf("%s", line);
+
         }
+
+    }
+
+    int main(int argc, char **argv){
+        micro_loop();
 
     }
