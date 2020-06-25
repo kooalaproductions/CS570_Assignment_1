@@ -14,7 +14,9 @@ msh.c file
 
 static char line[1024];
 char *getlogin();
+void exit(int status);
 int run = 1;
+int result;
 
     char micro_loop(){
     char *buf;
@@ -22,7 +24,7 @@ int run = 1;
         buf = getlogin();
 
 
-        while(run){
+        while(run){//loop runs forever
 
            printf("%s%%", buf);
             fflush(NULL);
@@ -31,8 +33,12 @@ int run = 1;
                 return 0;
            }
 
-            printf("%s", line);
+           line[strlen(line)-1] = '\0';//remove null terminator
+                result = strcmp(line, "exit");
+                if(result == 0){// if line and exit match then exit program
+                        exit(0);
 
+                }
         }
 
     }
