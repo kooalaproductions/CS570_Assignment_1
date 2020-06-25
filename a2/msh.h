@@ -8,30 +8,13 @@ Professor Leonard
 Assignment #2, Microshell
 msh.h file
 */
-#include <stdio.h>
-
-#include <errno.h>
-
-#include <ctype.h>
-
-#include <stdlib.h>
-
-#include <unistd.h>
-
-#include <sys/types.h>
-
-#include <signal.h>
+#define _GNU_SOURCE
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<sys/types.h>
 
 
-
-#include <fcntl.h>
-
-#include <sys/stat.h>
-
-#include <string.h>
-
-#define MAX_LENGTH 100
-
-#define MAX_TOKENS 20
 
 

@@ -12,38 +12,71 @@ msh.c file
 
 #include "msh.h"
 
-static char line[1024];
+//static char line[1024];
 char *getlogin();
 void exit(int status);
 int run = 1;
 int result;
+char *line = NULL;
+size_t lineSize = 0;
+char **args;
 
-    char micro_loop(){
-    char *buf;
-        buf = (char *)malloc(10*sizeof(char));
-        buf = getlogin();
+char **parseLine(char *line){
+    int size = 64;
+    int address = 0;
+     char **tokens = malloc(size * sizeof(char*));
+     char * token = strtok(line, " ");
+
+     while( token != NULL ) {
+      tokens[address] = token;
+        address++;
+
+    if (address >= size) {
+      size += 64;
+      tokens = realloc(tokens, size * sizeof(char*));
+          if (!tokens) {
+            exit(0);
+          }
+    }
+
+    token = strtok(NULL, " ");//parse by white space
+
+   }
+   tokens[address] = NULL;
+
+   return tokens;
+
+}
+
+char micro_loop(){
+    char *userName;
 
 
-        while(run){//loop runs forever
+    userName = (char *)malloc(10*sizeof(char));
+    userName = getlogin();
 
-           printf("%s%%", buf);
-            fflush(NULL);
 
-           if(!fgets(line, 1024, stdin)){//variable line has what the user entered
-                return 0;
-           }
+    while(run){//loop runs forever
 
-           line[strlen(line)-1] = '\0';//remove null terminator
-                result = strcmp(line, "exit");
-                if(result == 0){// if line and exit match then exit program
-                        exit(0);
+        printf("%s%% ", userName);
+        line = (char *)malloc(lineSize * sizeof(char));
+        if(getline(&line,&lineSize,stdin) == -1){
+            exit(0);
+        }
 
-                }
+        args = parseLine(line);
+        printf("%s\n", args[0]);
+         printf("%s\n", args[1]);
+           printf("%s\n", args[2]);
+
         }
 
     }
 
-    int main(int argc, char **argv){
-        micro_loop();
+
+
+
+int main(int argc, char **argv){
+    micro_loop();
 
     }
