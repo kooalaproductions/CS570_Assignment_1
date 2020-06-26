@@ -74,13 +74,13 @@ to communicate with each other.
 
 Jasmine Nelson RedID: 820233707 (cssc2157):
  Markup:
-     *void parseLine(char *line, char *tokens[])
-     *void execute(char *cmdArgs[])
+     * void parseLine(char *line, char *tokens[])
+     * void execute(char *cmdArgs[])
 
 Ernesto Sanchez RedID: 819323499 (cssc2123):
 Markup:
-    *char micro_loop()
-    *void execute(char *cmdArgs[])
+    * char micro_loop()
+    * void execute(char *cmdArgs[])
 
 
 ### List of tools not required in Assignment
