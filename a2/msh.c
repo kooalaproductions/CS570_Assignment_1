@@ -23,26 +23,23 @@ char **args;
 
 char **parseLine(char *line){
     int size = 64;
-    int address = 0;
+    int location = 0;
      char **tokens = malloc(size * sizeof(char*));
      char * token = strtok(line, " ");
 
      while( token != NULL ) {
-      tokens[address] = token;
-        address++;
+      tokens[location] = token;
+        location++;
 
-    if (address >= size) {
+    if (location >= size) {
       size += 64;
       tokens = realloc(tokens, size * sizeof(char*));
-          if (!tokens) {
-            exit(0);
-          }
     }
 
     token = strtok(NULL, " ");//parse by white space
 
    }
-   tokens[address] = NULL;
+   tokens[location] = NULL;
 
    return tokens;
 
@@ -64,15 +61,16 @@ char micro_loop(){
             exit(0);
         }
 
-        args = parseLine(line);
-        printf("%s\n", args[0]);
-         printf("%s\n", args[1]);
-           printf("%s\n", args[2]);
+        args = parseLine(line);//parse line stored in args
+//        printf("%s\n", args[0]);
+//         printf("%s\n", args[1]);
+//           printf("%s\n", args[2]);
+
+
 
         }
 
     }
-
 
 
 
