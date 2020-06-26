@@ -38,7 +38,7 @@ Makefile
 make all
 ```
 
-This will create a executable file named pam
+This will create a executable file named msh
 
 
 ### Operating Instructions
@@ -48,7 +48,7 @@ How to compile:
 ```
 make all
 
-./bots
+./msh
 
 ```
 
@@ -59,15 +59,16 @@ make clean
 
 ```
 
-This will remove msh.o, and pam
+This will remove msh.o, and msh
 
 
 ## List of Decisions
 
-We decided to approach this assingment step-by-step starting with getting the pid and printing to the QUOTE.txt. Since threads and semaphores were an unfamiliar topic
-we researched POSIX documentation to figure out how to create threads and implement them. In order for our threads to run simultaneously we reasearched how to use semaphores to block/wait threads so that they
-do not interrupt each other when printing to the file. We then categorized each thread as odd or even due to their thread id and as such a qoute was appendended in reference to their parity. According to how long
-each thread sleeps for, we calculated when each thread wrote to the file, and determined the output.
+Our first step was to determine how to print a continues loop with current username. Once we established our while loop we
+then proceeded to parsing user input into tokens. We used the delimiter "\n" and white-space to correctly parse our tokens.
+Parsing user input allowed us to create the argument "exit", when user enters the "exit" our program will terminate. The next step
+was to determine if the user input is a qualifies path name using exec. Finally, we created the argument pipe to created any number of processes
+to communicate with each other.
 
 
 ### List of tools not required in Assignment
@@ -80,5 +81,5 @@ There is none
 
 ## Lesson Learned
 
-By using threads we learned how to write to a file cuncurrently with the help of semaphores. Additionally, we learned the POSIX system calls for creating and managing the semaphores and threads.
+We learned the importance of parsing user input in order to execute specific arguments and also the capabilities a linux shell has to offer.
 
