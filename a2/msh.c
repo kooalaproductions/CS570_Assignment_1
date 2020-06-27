@@ -50,7 +50,7 @@ void execute(char *cmdArgs[]){
     printf("%d\n",cmdSize);//im not sure why the size is 1
         int i;
         for (i=0;i < (sizeof (cmdArgs) /sizeof (cmdArgs[0]));i++) {
-            printf("%lf\n",cmdArgs[i]);
+            printf("%lf\n",cmdArgs[i]);//prints out 0.00000
         }
 
 
