@@ -45,6 +45,14 @@ void execute(char *cmdArgs[]){
         printf("File name is not executable, please enter a new file name.\n");
     }
 
+    size_t cmdSize = sizeof(cmdArgs)/sizeof(cmdArgs[0]);
+
+    printf("%d\n",cmdSize);//im not sure why the size is 1
+        int i;
+        for (i=0;i < (sizeof (cmdArgs) /sizeof (cmdArgs[0]));i++) {
+            printf("%lf\n",cmdArgs[i]);
+        }
+
 
 
 }
