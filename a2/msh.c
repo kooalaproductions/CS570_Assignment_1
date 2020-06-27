@@ -43,19 +43,41 @@ void parseLine(char *line, char *tokens[]){//parse line entered
 }
 
 void execute(char *cmdArgs[]){
-    if(execvp(*cmdArgs, cmdArgs) <0){//checks if file name is executable
-        printf("File name is not executable, please enter a new file name.\n");
+
+    pid_t child_pid;
+    int stat_loc;
+    child_pid = fork();
+
+    if(child_pid == 0){
+        if(execvp(*cmdArgs, cmdArgs) <0){//checks if file name is executable
+            printf("File name is not executable, please enter a new file name.\n");
+        }
     }
-    printf("%d", cmdSize);
+    else{
+        waitpid(child_pid, &stat_loc, WUNTRACED);
+    }
+
+//    free(cmdArgs);
+
+
+
+    printf("%d\n", cmdSize);
 
     pipes(cmdSize, cmdArgs);
     cmdSize = 0;
 
 
 }
+
+int  in_out(int in, int out, char *cmd[]){
+  pid_t pid;
+
+
+
+  return pid;
+}
 int pipes (int cmdSize, char *cmd[]){
 
-return 1;
 
 
 }
@@ -82,6 +104,7 @@ char micro_loop(){
         if(strcmp(argsTwo[0], "exit") == 0){//If user enters 'exit', end microshell
             exit(0);
         }
+
 
         execute(argsTwo);
 //        if(argsTwo[0] == "exit"){
