@@ -22,6 +22,7 @@ int result;
 char *line = NULL;
 size_t lineSize = 0;
 char *argsTwo[10];
+int cmdSize;
 
 void parseLine(char *line, char *tokens[]){//parse line entered
     int index = 0;
@@ -36,6 +37,7 @@ void parseLine(char *line, char *tokens[]){//parse line entered
         tokens[index] = token;
         index++;
         token = strtok(NULL, " ");
+        cmdSize++;
     }
 
 }
@@ -44,15 +46,16 @@ void execute(char *cmdArgs[]){
     if(execvp(*cmdArgs, cmdArgs) <0){//checks if file name is executable
         printf("File name is not executable, please enter a new file name.\n");
     }
+    printf("%d", cmdSize);
 
-    size_t cmdSize = sizeof(cmdArgs)/sizeof(cmdArgs[0]);
+    pipes(cmdSize, cmdArgs);
+    cmdSize = 0;
 
-    printf("%d\n",cmdSize);//im not sure why the size is 1
-        int i;
-        for (i=0;i < (sizeof (cmdArgs) /sizeof (cmdArgs[0]));i++) {
-            printf("%lf\n",cmdArgs[i]);//prints out 0.00000
-        }
 
+}
+int pipes (int cmdSize, char *cmd[]){
+
+return 1;
 
 
 }
