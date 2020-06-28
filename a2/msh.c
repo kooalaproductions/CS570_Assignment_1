@@ -102,7 +102,7 @@ micro_loop() is in charge of identifying the current user name and printing it s
 the variable line. Line will then be parsed to search for certain characters to emulate a shell. Once parsed line will return as a pointer args that the method will use
 to string compare for the command "exit" in order to terminate the microshell. If exit is not found it will continue to the method execute() and finally it will free line and args.
 **/
-int micro_loop(){
+char micro_loop(){
     char* linePiped[2];
     int isPipe = 0;
 
@@ -148,7 +148,7 @@ int micro_loop(){
         free(args);
 
         }
-        return 1 + isPipe;
+        return 0;
 
     }
 
@@ -158,7 +158,7 @@ int micro_loop(){
 main() runs micro_loop()
 **/
 int main(){
-    int flag = micro_loop();//call continues loop
+    micro_loop();//call continues loop
 
-    return 0;
+
     }
