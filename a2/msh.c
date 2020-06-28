@@ -62,20 +62,12 @@ int execute(char **cmdArgs){
     if(child_pid == 0){
         if(execvp(cmdArgs[0], cmdArgs) <0){//checks if file name is executable
             printf("File name is not executable, please enter a new file name.\n");
+            exit(0);
         }
     }
     else{
         waitpid(child_pid, &stat_loc, WUNTRACED);
     }
-
-
-//
-//
-//
-//    printf("%d\n", cmdSize);
-//
-//    pipes(cmdSize, cmdArgs);
-//    cmdSize = 0;
 
     return 1;
 
@@ -85,13 +77,9 @@ int execute(char **cmdArgs){
 int  in_out(int in, int out, char *cmd[]){
   pid_t pid;
 
-
-
   return pid;
 }
 int pipes (int cmdSize, char *cmd[]){
-
-
 
 }
 
@@ -113,6 +101,7 @@ char micro_loop(){
         args = parseLine(line, args);
 
         if(strcmp(args[0], "exit") == 0){//If user enters 'exit', end microshell
+//            kill(0, SIGINT);
             exit(0);
         }
 
@@ -121,13 +110,6 @@ char micro_loop(){
 
         free(line);
         free(args);
-//        if(argsTwo[0] == "exit"){
-//            printf("exiting msh");
-//            exit(0);
-//    }
-//        printf("%s\n", argsTwo[0]);
-//        printf("%s\n", argsTwo[1]);
-//        printf("%s\n", argsTwo[2]);
 
         }
         return 0;
