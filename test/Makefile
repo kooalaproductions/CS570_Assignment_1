@@ -11,15 +11,15 @@
 CC = gcc
 CFLAGS = -lreadline
 
-SRCS = msh.c
+SRCS = test.c
 
 OBJS = $(SRCS:.c=.o)
 
-MAIN = msh
+MAIN = test
 
 
 all:	$(MAIN)
-		@echo Simple compiler named msh has been compiled
+		@echo Simple compiler named test has been compiled
 
 $(MAIN): $(OBJS)
 		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)

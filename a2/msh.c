@@ -21,14 +21,19 @@ int run = 1;
 int result;
 char *line = NULL;
 size_t lineSize = 0;
-char *argsTwo[10];
+char **argsTwo;
+char **args;
 int cmdSize;
+char *userName;
 
-void parseLine(char *line, char *tokens[]){//parse line entered
+char **parseLine(char *line, char **tokens){//parse line entered
+
     int index = 0;
     int size = 100;
+    tokens = malloc(size * sizeof(char*));
 
     char *token = strtok(line, DELIM);//gets first token
+    printf("In parse line\n");
 
     while(token != NULL){
         if(size <= index){//if index is greater than the size, allocate more space
@@ -39,17 +44,23 @@ void parseLine(char *line, char *tokens[]){//parse line entered
         token = strtok(NULL, " ");
         cmdSize++;
     }
+    tokens[index] = NULL;
+    printf("Success parse line\n");
+
+    return tokens;
+
 
 }
 
-void execute(char *cmdArgs[]){
+int execute(char **cmdArgs){
 
     pid_t child_pid;
     int stat_loc;
     child_pid = fork();
+    printf("in Execute\n");
 
     if(child_pid == 0){
-        if(execvp(*cmdArgs, cmdArgs) <0){//checks if file name is executable
+        if(execvp(cmdArgs[0], cmdArgs) <0){//checks if file name is executable
             printf("File name is not executable, please enter a new file name.\n");
         }
     }
@@ -57,14 +68,16 @@ void execute(char *cmdArgs[]){
         waitpid(child_pid, &stat_loc, WUNTRACED);
     }
 
-//    free(cmdArgs);
 
+//
+//
+//
+//    printf("%d\n", cmdSize);
+//
+//    pipes(cmdSize, cmdArgs);
+//    cmdSize = 0;
 
-
-    printf("%d\n", cmdSize);
-
-    pipes(cmdSize, cmdArgs);
-    cmdSize = 0;
+    return 1;
 
 
 }
@@ -84,10 +97,6 @@ int pipes (int cmdSize, char *cmd[]){
 
 
 char micro_loop(){
-    char *userName;
-
-
-
     userName = (char *)malloc(10*sizeof(char));
     userName = getlogin();
 
@@ -95,18 +104,23 @@ char micro_loop(){
     while(run){//loop runs forever
 
         printf("%s%% ", userName);//prints out the current username cssc9999%
-        line = (char *)malloc(lineSize * sizeof(char));
+        line = malloc(lineSize * sizeof(char));
         if(getline(&line,&lineSize,stdin) == -1){//grabs what the user enters and assigns it to variable line
             exit(0);
         }
+        printf("User entered: %s", line);
 
-        parseLine(line, argsTwo);
-        if(strcmp(argsTwo[0], "exit") == 0){//If user enters 'exit', end microshell
+        args = parseLine(line, args);
+
+        if(strcmp(args[0], "exit") == 0){//If user enters 'exit', end microshell
             exit(0);
         }
 
 
-        execute(argsTwo);
+       run = execute(args);
+
+        free(line);
+        free(args);
 //        if(argsTwo[0] == "exit"){
 //            printf("exiting msh");
 //            exit(0);
@@ -116,6 +130,7 @@ char micro_loop(){
 //        printf("%s\n", argsTwo[2]);
 
         }
+        return 0;
 
     }
 
