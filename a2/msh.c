@@ -12,7 +12,7 @@ msh.c file
 
 #include "msh.h"
 
-#define DELIM " \n"
+#define DELIM " "
 
 
 char *getlogin();
@@ -25,6 +25,7 @@ char **argsTwo;
 char **args;
 int cmdSize;
 char *userName;
+char *c;
 
 char **parseLine(char *line, char **tokens){//parse line entered
 
@@ -90,6 +91,9 @@ char micro_loop(){
 
 
     while(run){//loop runs forever
+//        line = readline("unix> ");
+//        line = line = malloc(lineSize * sizeof(char));
+
 
         printf("%s%% ", userName);//prints out the current username cssc9999%
         line = malloc(lineSize * sizeof(char));
@@ -98,6 +102,7 @@ char micro_loop(){
         }
         printf("User entered: %s", line);
 
+        if((c=strchr(line,'\n'))!= NULL)*c='\0';
         args = parseLine(line, args);
 
         if(strcmp(args[0], "exit") == 0){//If user enters 'exit', end microshell
