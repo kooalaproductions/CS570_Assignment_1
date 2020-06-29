@@ -25,6 +25,7 @@ int cmdSize;
 char *userName;
 char *c;
 
+
 int parsePipe(char *line, char **tokens){
     int k;
     for(k = 0; k < 2; k++){
@@ -69,6 +70,53 @@ char **parseLine(char *line, char **tokens){//parse line entered
     return tokens;
 
 }
+void executePipe(char** parsed, char** parsedpipe){
+
+	int pipefd[2];
+	pid_t p1, p2;
+
+	if (pipe(pipefd) < 0) {
+		printf("\nPipe could not be initialized");
+		return;
+	}
+	p1 = fork();
+	if (p1 < 0) {
+		printf("\nCould not fork");
+		return;
+	}
+
+	if (p1 == 0) {
+
+		close(pipefd[0]);
+		dup2(pipefd[1], STDOUT_FILENO);
+		close(pipefd[1]);
+
+		if (execvp(parsed[0], parsed) < 0) {
+			printf("\nCould not execute command 1..");
+			exit(0);
+		}
+	} else {
+		p2 = fork();
+
+		if (p2 < 0) {
+			printf("\nCould not fork");
+			return;
+		}
+
+		if (p2 == 0) {
+			close(pipefd[1]);
+			dup2(pipefd[0], STDIN_FILENO);
+			close(pipefd[0]);
+			if (execvp(parsedpipe[1], parsedpipe) < 0) {
+				printf("\nCould not execute command 2..");
+				exit(0);
+			}
+		} else {
+			wait(NULL);
+			wait(NULL);
+		}
+	}
+}
 
 /**
 execute() is in charge of executing an executable filename. In this method we create multiple child process for each cmd entered by user.
@@ -96,7 +144,6 @@ int execute(char **cmdArgs){
 }
 
 
-
 /**
 micro_loop() is in charge of identifying the current user name and printing it such as cssc9999%. Getline will assign the entered argument or executable file name to
 the variable line. Line will then be parsed to search for certain characters to emulate a shell. Once parsed line will return as a pointer args that the method will use
@@ -105,6 +152,7 @@ to string compare for the command "exit" in order to terminate the microshell. I
 char micro_loop(){
     char* linePiped[2];
     int isPipe = 0;
+    char* parsedArgsPiped[100];
 
     userName = (char *)malloc(10*sizeof(char));
     userName = getlogin();
@@ -126,10 +174,10 @@ char micro_loop(){
 
         if(isPipe){
             printf("there is a pipe\n");
-            printf("%d\n", isPipe);
+            printf("%d\n", isPipe);//returns 1 if there is a "|" in the input
             parseLine(linePiped[0], args);
-            parseLine(linePiped[1], args);
-
+          parseLine(linePiped[1], args);
+          executePipe(args, parsedArgsPiped);
 
         }
 

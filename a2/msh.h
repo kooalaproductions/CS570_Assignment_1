@@ -18,5 +18,6 @@ msh.h file
 #include<signal.h>
 #include <readline/readline.h>
 
-
+#define READ  0
+#define WRITE 1
 
