@@ -21,14 +21,14 @@ int run = 1;
 char *line = NULL;
 size_t lineSize = 0;
 char **args;
-int cmdSize;
+int cmdSize = 1;
 char *userName;
 char *c;
 
 
 int parsePipe(char *line, char **tokens){
     int k;
-    for(k = 0; k < 2; k++){
+    for(k = 0; k < 3; k++){
         tokens[k] = strsep(&line, "|");
         if(tokens[k] == NULL){
             break;
@@ -72,13 +72,16 @@ char **parseLine(char *line, char **tokens){//parse line entered
 }
 void executePipe(char** parsed, char** parsedpipe){
 
-	int pipefd[2];
-	pid_t p1, p2;
+	int pipefd[3];
+	pid_t p1, p2, p3;
 
 	if (pipe(pipefd) < 0) {
 		printf("\nPipe could not be initialized");
 		return;
 	}
+
+
+
 	p1 = fork();
 	if (p1 < 0) {
 		printf("\nCould not fork");
@@ -95,7 +98,8 @@ void executePipe(char** parsed, char** parsedpipe){
 			printf("\nCould not execute command 1..");
 			exit(0);
 		}
-	} else {
+	}
+	if(p2 == 0) {
 		p2 = fork();
 
 		if (p2 < 0) {
@@ -107,14 +111,35 @@ void executePipe(char** parsed, char** parsedpipe){
 			close(pipefd[1]);
 			dup2(pipefd[0], STDIN_FILENO);
 			close(pipefd[0]);
-			if (execvp(parsedpipe[1], parsedpipe) < 0) {
+			if (execvp(parsedpipe[0], parsedpipe) < 0) {
 				printf("\nCould not execute command 2..");
+				exit(0);
+			}
+		}
+	}
+
+	else{
+            p3 = fork();
+
+		if (p3 < 0) {
+			printf("\nCould not fork");
+			return;
+		}
+
+		if (p3 == 0) {
+			close(pipefd[2]);
+			dup2(pipefd[1], STDIN_FILENO);
+			close(pipefd[1]);
+			if (execvp(parsedpipe[1], parsedpipe) < 0) {
+				printf("\nCould not execute command 3..");
 				exit(0);
 			}
 		} else {
 			wait(NULL);
 			wait(NULL);
+			wait(NULL);
 		}
+
 	}
 }
 
@@ -150,7 +175,7 @@ the variable line. Line will then be parsed to search for certain characters to 
 to string compare for the command "exit" in order to terminate the microshell. If exit is not found it will continue to the method execute() and finally it will free line and args.
 **/
 char micro_loop(){
-    char* linePiped[2];
+    char* linePiped[3];
     int isPipe = 0;
     char* parsedArgsPiped[100];
 
@@ -174,9 +199,16 @@ char micro_loop(){
 
         if(isPipe){
             printf("there is a pipe\n");
-            printf("%d\n", isPipe);//returns 1 if there is a "|" in the input
+            printf("%d\n", isPipe);
+
             parseLine(linePiped[0], args);
           parseLine(linePiped[1], args);
+          parseLine(linePiped[2], args);
+
+          printf("%s\n", linePiped[0]);
+          printf("%s\n", linePiped[1]);
+          printf("%s\n", linePiped[2]);
+
           executePipe(args, parsedArgsPiped);
 
         }

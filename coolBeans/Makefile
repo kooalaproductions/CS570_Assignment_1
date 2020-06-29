@@ -9,7 +9,7 @@
 #Makefile
 
 CC = gcc
-CFLAGS = -lreadline
+CFLAGS = -Wall
 
 SRCS = shell.c
 
