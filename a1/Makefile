@@ -9,7 +9,7 @@
 #Makefile
 
 CC = gcc
-CFLAGS = -lpthread -mt
+CFLAGS = -lpthread -std=c99 -pthread -lm
 
 SRCS = bots.c
 
