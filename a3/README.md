@@ -1,6 +1,6 @@
 # CS570_Assignment_1
 
-Project will create a microshell that will parse commands to emulate a linux shell
+Project will create a management of threads.
 
 Account cssc2123 is available for testing.
 
@@ -16,7 +16,7 @@ CS570, Summer 2020
 
 ### Assignment Information
 
-Assignment #2, Microshell
+Assignment #3, Management of Threads
 
 ### Filename
 
@@ -24,9 +24,9 @@ README
 
 ### File Manifest
 
-msh.c
+mot.c
 
-msh.h
+mot.h
 
 README
 

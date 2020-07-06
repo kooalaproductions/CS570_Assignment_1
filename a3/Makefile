@@ -4,28 +4,26 @@
 #CS570, Summer 2020
 #Professor Leonard
 #
-#Assignment #1, Write to File Using Threads
+#Assignment #3, Management of Threads (mot)
 
 #Makefile
 
 CC = gcc
-CFLAGS = -lpthread -mt
+CFLAGS = -lpthread
 
-SRCS = bots.c
+SRCS = mot.c
 
 OBJS = $(SRCS:.c=.o)
 
-MAIN = bots
+MAIN = mot
 
 
 all:	$(MAIN)
-		@echo Simple compiler named bots has been compiled
+		@echo Simple compiler named mot has been compiled
 
 $(MAIN): $(OBJS)
 		$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
 
 
 clean:
-		$(RM) *.o *~ $(MAIN) QUOTE.txt
-
-
+		$(RM) *.o *~ $(MAIN)

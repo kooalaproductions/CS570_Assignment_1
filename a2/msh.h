@@ -15,9 +15,6 @@ msh.h file
 #include<unistd.h>
 #include<sys/types.h>
 #include <sys/wait.h>
-#include<signal.h>
 #include <readline/readline.h>
 
-#define READ  0
-#define WRITE 1
-
+#define DELIM " |"
