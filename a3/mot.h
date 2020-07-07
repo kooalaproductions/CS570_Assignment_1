@@ -18,8 +18,6 @@ mot.h file
 #include <pthread.h>
 #include <semaphore.h>
 #include <signal.h>
-#define _XOPEN_SOURCE 700
-#include <assert.h>
-#include <stdbool.h> /* false */
+
 
 
